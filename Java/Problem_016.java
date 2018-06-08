@@ -1,8 +1,7 @@
 /* Problem 16 - Power Digit Sum
-
-Solved.
-
-What is the sum of the digits of the number 2 ^ 1000? */
+ *
+ * What is the sum of the digits of the number 2 ^ 1000?
+ */
 
 import java.math.BigDecimal;
 

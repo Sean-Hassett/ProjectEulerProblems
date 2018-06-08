@@ -1,12 +1,11 @@
 /* Problem 16 - Power Digit Sum
-
-Solved.
-
-If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
-
-
-NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen)
-contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage. */
+ *
+ * If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
+ *
+ * NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115
+ * (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance
+ * with British usage.
+ */
 
 import java.util.HashMap;
 
@@ -25,7 +24,7 @@ public class Problem_017 {
 		System.out.println(total);
 	}
 	
-	public static void populateMaps() {
+	private static void populateMaps() {
 		unitMap.put(1, "one");
 		unitMap.put(2, "two");
 		unitMap.put(3, "three");
@@ -57,12 +56,12 @@ public class Problem_017 {
 		altTensMap.put(9, "nineteen");
 	}
 	
-	public static int countLetters(int number) {
+	private static int countLetters(int number) {
 		String numString = numDigitToLetter(number).replaceAll(" ", "");
 		return numString.length();
 	}
-	
-	public static String numDigitToLetter(int number) {
+
+    private static String numDigitToLetter(int number) {
 		String numString = Integer.toString(number);
 		if (numString.length() == 1)
 			return getUnits(number);
@@ -71,12 +70,12 @@ public class Problem_017 {
 		else
 			return getHundreds(number);
 	}
-	
-	public static String getUnits(int n) {
+
+    private static String getUnits(int n) {
 		return unitMap.get(n);
 	}
-	
-	public static String getTens(int n) {
+
+    private static String getTens(int n) {
 	    char[] digits = Integer.toString(n).toCharArray();
 	    if (digits[0] == '1')
 	    	return altTensMap.get(Character.getNumericValue(digits[1]));
@@ -85,8 +84,8 @@ public class Problem_017 {
 	    else
 	    	return tensMap.get(Character.getNumericValue(digits[0])) + " " + getUnits(Character.getNumericValue(digits[1]));
 	}
-	
-	public static String getHundreds(int n) {
+
+    private static String getHundreds(int n) {
 		char[] digits = Integer.toString(n).toCharArray();
 		if (digits[1] == '0' && digits[2] == '0')
 			return unitMap.get(Character.getNumericValue(digits[0])) + " hundred";

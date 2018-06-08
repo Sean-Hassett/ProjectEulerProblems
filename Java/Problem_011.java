@@ -1,8 +1,8 @@
 /* Problem 11 - Largest Product in a Grid
-
-Solved.
-
-What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid? */
+ *
+ * What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally)
+ * in the 20×20 grid?
+ */
 
 public class Problem_011 {
 	public static void main(String[] args) {
@@ -30,8 +30,8 @@ public class Problem_011 {
 		
 		int gridIndex = 0;
 		int[][] gridArray = new int[20][20];
-		for (int i = 0; i < gridArray.length; i++){
-			for (int j = 0; j < gridArray[0].length; j++){
+		for (int i = 0; i < gridArray.length; i++) {
+			for (int j = 0; j < gridArray[0].length; j++) {
 				gridArray[i][j] = Integer.parseInt(grid.substring(gridIndex, gridIndex+2));
 				gridIndex += 3;
 			}
@@ -44,7 +44,7 @@ public class Problem_011 {
 		int diagonalLeftProduct = 0;
 		
 		for (int i = 0; i < gridArray.length - 3; i++){
-			for (int j = 0; j < gridArray[0].length - 3; j++){
+			for (int j = 0; j < gridArray[0].length - 3; j++) {
 				
 				horizontalProduct = gridArray[i][j] * gridArray[i][j+1] * gridArray[i][j+2] * gridArray[i][j+3];
 				verticalProduct = gridArray[i][j] * gridArray[i+1][j] * gridArray[i+2][j] * gridArray[i+3][j];

@@ -1,8 +1,7 @@
 /* Problem 13 - Large Sum
-
-Solved.
-
-Work out the first ten digits of the sum of the following one-hundred 50-digit numbers. */
+ *
+ * Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
+ */
 
 import java.text.DecimalFormat;
 
@@ -110,7 +109,7 @@ public class Problem_013 {
 								 + "20849603980134001723930671666823555245252804609722 "
 								 + "53503534226472524250874054075591789781264330331690";	
 		
-		String[] stringNumsArray = fiftyDigitNumbers.split(" ");
+		String[] stringNumArray = fiftyDigitNumbers.split(" ");
 		
 		long fifthTen = 0;
 		long fourthTen = 0;
@@ -126,32 +125,32 @@ public class Problem_013 {
 		long divider = 10000000000L;
 		DecimalFormat format = new DecimalFormat("0000000000");
 		
-		for (int i = 0; i < stringNumsArray.length; i++)
-			fifthTen += Long.parseLong(stringNumsArray[i].substring(40, 50));
+		for (int i = 0; i < stringNumArray.length; i++)
+			fifthTen += Long.parseLong(stringNumArray[i].substring(40, 50));
 		fifthRemainder = fifthTen / divider;
 		fifthTen = fifthTen % divider;
 		
 		fourthTen = fifthRemainder;
-		for (int i = 0; i < stringNumsArray.length; i++)
-			fourthTen += Long.parseLong(stringNumsArray[i].substring(30, 40));
+		for (int i = 0; i < stringNumArray.length; i++)
+			fourthTen += Long.parseLong(stringNumArray[i].substring(30, 40));
 		fourthRemainder = fourthTen / divider;
 		fourthTen = fourthTen % divider;
 		
 		thirdTen = fourthRemainder;
-		for (int i = 0; i < stringNumsArray.length; i++)
-			thirdTen += Long.parseLong(stringNumsArray[i].substring(20, 30));
+		for (int i = 0; i < stringNumArray.length; i++)
+			thirdTen += Long.parseLong(stringNumArray[i].substring(20, 30));
 		thirdRemainder = thirdTen / divider;
 		thirdTen = thirdTen % divider;
 		
 		secondTen = thirdRemainder;
-		for (int i = 0; i < stringNumsArray.length; i++)
-			secondTen += Long.parseLong(stringNumsArray[i].substring(10, 20));
+		for (int i = 0; i < stringNumArray.length; i++)
+			secondTen += Long.parseLong(stringNumArray[i].substring(10, 20));
 		secondRemainder = secondTen / divider;
 		secondTen = secondTen % divider;
 		
 		firstDigits = secondRemainder;
-		for (int i = 0; i < stringNumsArray.length; i++)
-			firstDigits += Long.parseLong(stringNumsArray[i].substring(0, 10));
+		for (int i = 0; i < stringNumArray.length; i++)
+			firstDigits += Long.parseLong(stringNumArray[i].substring(0, 10));
 		
 		String firstDigitsString = format.format(firstDigits);
 		String secondTenString = format.format(secondTen);

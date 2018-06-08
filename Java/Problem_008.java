@@ -1,12 +1,12 @@
 /* Problem 8 - Largest Product in a Series
+ *
+ * Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.
+ *
+ * What is the value of this product?
+ */
 
-Solved.
-
-Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.
-What is the value of this product? */
-
-public class Problem_008{
-	public static void main(String[] args){
+public class Problem_008 {
+	public static void main(String[] args) {
 		final int SEQUENCE_LENGTH = 13;
 		String number = "73167176531330624919225119674426574742355349194934"
 					  + "96983520312774506326239578318016984801869478851843"
@@ -30,11 +30,12 @@ public class Problem_008{
 					  + "71636269561882670428252483600823257530420752963450";
 		long maxProduct = 0;
 		long product = 0;
+		String testSequence = "";
 		
-		for (int i = 0; i + SEQUENCE_LENGTH < number.length(); i++){
-			String testSequence = number.substring(i, i + SEQUENCE_LENGTH);
+		for (int i = 0; i + SEQUENCE_LENGTH < number.length(); i++) {
+			testSequence = number.substring(i, i + SEQUENCE_LENGTH);
 			product = Integer.parseInt(testSequence.substring(0, 1));
-			for (int j = 1; j < testSequence.length(); j++)
+			for (int j = 1; j < SEQUENCE_LENGTH; j++)
 				product *= Integer.parseInt(testSequence.substring(j, j+1));
 			if (product > maxProduct)
 				maxProduct = product;
