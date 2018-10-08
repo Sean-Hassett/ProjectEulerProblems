@@ -22,14 +22,13 @@ func isPrime(num int) bool {
 }
 
 func main() {
-	div := int(math.Sqrt(float64(N)))
-	for div > 2 {
+
+	for div := int(math.Sqrt(float64(N))); div > 2; div-- {
 		if N%div == 0 {
 			if isPrime(div) {
 				fmt.Println(div)
 				div = 0
 			}
 		}
-		div -= 1
 	}
 }
