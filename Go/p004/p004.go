@@ -24,8 +24,8 @@ func main() {
 	for i := 999; i > 0; i-- {
 		for j := i; j > 0; j-- {
 			num := i * j
-			if isPalindrome(num) {
-				if num > largestPalindrome {
+			if num > largestPalindrome {
+				if isPalindrome(num) {
 					largestPalindrome = num
 				}
 			}
