@@ -21,12 +21,13 @@ func isPalindrome(num int) bool {
 func main() {
 	largestPalindrome := 0
 
-	for i := 999; i > 0; i-- {
-		for j := i; j > 0; j-- {
+	for i := 999; i > 100; i-- {
+		for j := i; j > 100; j-- {
 			num := i * j
 			if num > largestPalindrome {
 				if isPalindrome(num) {
 					largestPalindrome = num
+					break
 				}
 			}
 		}
