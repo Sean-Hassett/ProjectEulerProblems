@@ -5,8 +5,6 @@ import (
 	"math"
 )
 
-const N = 600851475143
-
 func isPrime(num int) bool {
 	if num%2 == 0 {
 		return false
@@ -20,13 +18,14 @@ func isPrime(num int) bool {
 }
 
 func main() {
-
-	for div := int(math.Sqrt(float64(N))); div > 2; div-- {
-		if N%div == 0 {
-			if isPrime(div) {
-				fmt.Println(div)
-				div = 0
-			}
+	N := 10001
+	i := 2
+	x := 3
+	for i < N {
+		x += 2
+		if isPrime(x) {
+			i++
 		}
 	}
+	fmt.Println(x)
 }
